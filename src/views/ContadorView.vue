@@ -1,7 +1,8 @@
 <template>
     <div>
-        <Contador />
-        <Contador />
+        <Contador tit="Contador 1" v-bind:inicio="20" :mostrar="true" />
+        <Contador tit="Contador 2" :inicio="4" :mostrar="false" />
+
     </div>
   
 </template>
