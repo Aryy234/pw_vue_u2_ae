@@ -1,0 +1,94 @@
+node_modules: librerias
+public: archivos de caracter publico no requieren autenticacion
+page o views: todo componente se aloja dentro de una pagina o vista, aun si tenemos 
+un solo componente, debe estar dentro de una pagina
+ 
+src: codigo fuente
+    assets: componentes utilitarios
+    componentes: base de vue - esquema de trabajo estructurado para trabajar 
+    secciones individuales (cabecera, menu, banners, pie, formulario) se comunican 
+    pero son independientes
+ 
+Archivos de inicio, elementos principales para arrancar la app
+    App.vue: componente raiz de la aplicacion
+    main.js: archivo de Configuracion que levanta la aplicacion
+ 
+tests: Aplicar pruebas unitarias
+.browserslistrc: sirve para definir qué navegadores quieres soportar en el 
+    proyecto frontend.
+ 
+.gitignore: archivos que no se suben al repositorio remoto
+ 
+babel.config.js: transformar a lenguaje que entiende el navegadores
+ 
+jest.config.js: configuracion de las pruebas unitarias
+ 
+jsconfig.json: configuraciones del idea
+ 
+package-lock.json: se alojan las versiones de todas las dependencias instaladas
+package.json: resumen de dependencias instaladas
+ 
+README.md: archivo destinado para documentar temas relevantes a mi proyecto
+            vue crear un recordatorio de los comandos 
+vue.config.js: cambiar configuraciones de puestos
+ 
+Configuracion para abrir la app desde codeespaces 
+module.exports = {
+  devServer: {
+    client: {
+      webSocketURL: {
+        protocol: "wss",
+      },
+    },
+    port: 8080,
+    host: "0.0.0.0"
+  }
+};
+ 
+Formas para trabajar con VUE
+Composition API
+ 
+Option API: La Options API es la forma tradicional de escribir componentes en Vue.js, 
+organizando el código en un objeto con propiedades separadas como data, methods y computed
+ 
+Propiedades reactivas: variables que vamos a usar dentro del componente, 
+  cuando hacemos un cambio actualiza la vista reactivamente, que no neesariamente
+  va a existir una petición (dentro del script se puede modificar una propiedad 
+  reactiva sin necesidad de una petición del usuario) 
+  cuando utiliamos una variable reactiva debemos utilizar this.
+ 
+Propiedades Computadas: son propiedades que se declaran como metodos pero no lo son,
+  se ejecutan solo cuando existe un cambio en su respuesta, caso contrario se guarda 
+  en caché, jamás puede recivir un parametro
+ 
+las directivas me permiten manipular el dom de manera reacitiva
+ 
+props: varibles a nivel de componente a las que puedo dar un valor desde compontes externos, 
+  para que esa varibale sea llenada por el padre
+ 
+v-bind: convierte el contenido en js
+v-if: condicional, true construye el elemento, false no construye,
+v-show: visualemente no hay diferencia con v-if, no muestra el elemento
+La diferencia principal es que v-if destruye y recrea el elemento del DOM según la condición, 
+  mientras que v-show siempre mantiene el elemento en el DOM y solo alterna su visibilidad con CSS (cambiando display: none).
+ 
+v-model: Cuando queremos asociar un valor
+--------------------------------------------------------------------------------
+COMANDOS VUE
+vue+tab: crear elementos principales
+<template>
+  Aqui ponemos todo lo que es html
+</template>
+ 
+<script>
+export default { //Declaracion especifica de option api
+    Aqui programamos toda la logica relacionada con js
+}
+</script>
+ 
+<style>
+    Todos los estilos css
+</style>
+ 
+npm install 
+npm run serve
