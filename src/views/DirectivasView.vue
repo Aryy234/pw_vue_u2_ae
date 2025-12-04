@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="view-container">
+        <h2>Prueba</h2>
         <Directivas/>
     </div>
 </template>
@@ -16,6 +17,15 @@ export default {
  
 </script>
  
-<style lang="scss" scoped>
+<style scoped>
+.view-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    font-size: large;
+    color: #42b983;
+}
  
 </style>
