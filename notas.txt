@@ -92,3 +92,9 @@ export default { //Declaracion especifica de option api
  
 npm install 
 npm run serve
+
+Modificadores de Eventos
+
+Tipos de API: restful que trabaja recibiendo y respondiendo JSON, soap
+
+Concepto: El frontend se va a conectar a traves del cliente al backend
