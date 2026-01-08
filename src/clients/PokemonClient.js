@@ -18,3 +18,29 @@ const obtenerVectorNumerico = () => {
     }
     return vector;
 }
+
+const obtenerVectorPokemon = (vectorNumerico) => {
+    consumirAPI(vectorNumerico[0]);
+    consumirAPI(vectorNumerico[1]);
+    consumirAPI(vectorNumerico[2]);
+    consumirAPI(vectorNumerico[3]);
+
+    const obj1 ={
+        nombre:data1.name,
+        id:data1.id
+    };
+    const obj2 ={
+        nombre:data2.name,
+        id:data2.id
+    };
+    const obj3 ={
+        nombre:data3.name,
+        id:data3.id
+    };
+    const obj4 ={
+        nombre:data4.name,
+        id:data4.id
+
+    }
+
+}
