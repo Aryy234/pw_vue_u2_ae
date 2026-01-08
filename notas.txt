@@ -99,3 +99,4 @@ Tipos de API: restful que trabaja recibiendo y respondiendo JSON, soap
 
 Concepto: El frontend se va a conectar a traves del cliente al backend
 axios permite la conexión con el backend en el frontend
+watch
