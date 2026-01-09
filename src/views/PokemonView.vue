@@ -1,8 +1,9 @@
 <template>
-    <div>
+    <div v-if="mostrar">
         <h2 v-if="mensaje" :class="{'ganado': esGanador, 'perdido': !esGanador}">{{ mensaje }}</h2>
         <PokemonImagen :pokemonId="pokemonGanador" />
         <PokemonOpciones @pokemonSeleccionado="evaluarGanador($event)" :listaPokemon="pokemonArr" />
+        <button @click="Destruir">Destruir</button>
     </div>
 </template>
  
@@ -21,9 +22,47 @@ export default {
             pokemonArr: [],
             pokemonGanador: 0,
             mensaje: '',
-            esGanador: false
+            esGanador: false,
+            mostrar: true
         };
     },
+
+    /*Crea el componente*/
+    beforeCreate() {
+        console.log('Before Create: Apenas se inicializan las propiedades reactivas');
+    },
+
+    created() {
+        console.log('Created: Se ha creado el componente y las propiedades reactivas están disponibles');
+    },
+
+    beforeMount() {
+        console.log('Before Mount: El componente está a punto de montarse en el DOM');
+    },
+
+    /*Montaje del componente*/
+    mounted() {
+        console.log('Mounted: Se ha montado el componente en el DOM');
+        this.iniciarJuego();
+    },
+
+    /*Actualización del componente*/
+    updated() {
+        console.log('Updated: El componente se ha actualizado debido a cambios en los datos reactivos');
+    },
+    beforeUpdate() {
+        console.log('Before Update: El componente está a punto de actualizarse');
+    },
+
+    /*Desmontaje del componente*/
+    beforeUnmount() {
+        console.log('Before Unmount: El componente está a punto de ser desmontado del DOM');
+    },
+
+    unmounted() {
+        console.log('Unmounted: El componente ha sido desmontado del DOM');
+    },
+
     methods: {
         async iniciarJuego() {
             this.pokemonArr = await obtenerVectorPokemonFacade();
@@ -48,6 +87,9 @@ export default {
                 this.mensaje = '';
                 this.iniciarJuego();
             }, 2000);
+        },
+        Destruir() {
+            this.mostrar = false;
         }
     },
     mounted() {
